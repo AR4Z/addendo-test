@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "66be7111-a3f9-4013-8238-2830cdb33e3f",
+		"name": "Addendo test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "Create organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My Organization\",\n    \"description\": \"Description about My Organization\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/organizations/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"organizations",
+								""
+							]
+						},
+						"description": "Allow create an organization"
+					},
+					"response": []
+				},
+				{
+					"name": "Update organization",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"An new name\",\n    \"description\": \"new description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/organizations/:organization_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"organizations",
+								":organization_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "",
+									"description": "id of the organization we want to update"
+								}
+							]
+						},
+						"description": "Allow update an organization using its id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete organization",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/organizations/:organization_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"organizations",
+								":organization_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "",
+									"description": "id of the organization we want to delete"
+								}
+							]
+						},
+						"description": "Allows delete organization uring its id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get organizations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/organizations/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"organizations",
+								""
+							]
+						},
+						"description": "Allows get all organizations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get an organization info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/organizations/:organization_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"organizations",
+								":organization_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "",
+									"description": "id of the organization we want to get its info"
+								}
+							]
+						},
+						"description": "Allows get an organization info"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Consultants",
+			"item": [
+				{
+					"name": "Create consultant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pepito perez\",\n    \"birth_date\": \"1996-11-02\",\n    \"organization\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/consultants/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"consultants",
+								""
+							]
+						},
+						"description": "Allows create a consultant"
+					},
+					"response": []
+				},
+				{
+					"name": "Update consultant",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pepita perez\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/consultants/:consultant_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"consultants",
+								":consultant_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "consultant_id",
+									"value": "4",
+									"description": "id of the consultant to be updated"
+								}
+							]
+						},
+						"description": "Allows to update a consultant using his id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete consultant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/consultants/:consultant_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"consultants",
+								":consultant_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "consultant_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get consultants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/consultants/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"consultants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get consultant info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/consultants/:consultant_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"consultants",
+								":consultant_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "consultant_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
