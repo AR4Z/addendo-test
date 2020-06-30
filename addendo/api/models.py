@@ -9,4 +9,4 @@ class Organization(models.Model):
 class Consultant(models.Model):
     name = models.CharField(max_length=50)
     birth_date = models.DateField()
-    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization, related_name='consultants', on_delete=models.CASCADE)
